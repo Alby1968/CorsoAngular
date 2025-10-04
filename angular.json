@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "corso-angular32": {
+    "corso-angular36": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/corso-angular32",
+            "outputPath": "dist/corso-angular36",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -62,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "corso-angular32:build:production"
+              "buildTarget": "corso-angular36:build:production"
             },
             "development": {
-              "buildTarget": "corso-angular32:build:development"
+              "buildTarget": "corso-angular36:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "corso-angular32:build"
+            "buildTarget": "corso-angular36:build"
           }
         },
         "test": {
@@ -89,10 +90,14 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

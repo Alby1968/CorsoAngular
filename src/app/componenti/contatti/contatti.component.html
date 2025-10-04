@@ -1,0 +1,29 @@
+<!-- <div *ngIf="!isProfile;"> -->
+<div >
+    <p style="text-transform: uppercase; margin-top: 50px;">Lista contatti</p>
+    <div>
+        <div *ngFor="let persona of persone; index as i">
+            
+            <!-- <a  routerLink="/contatti/{{i}}"> -->
+            <a  routerLink="/contatti/{{persona.id}}">
+                <!-- <p> {{persona.nome}} - {{persona.cognome}}</p> </a> -->
+            
+                <p> {{persona.nome}} - {{persona.email}} - {{persona.colore}} - {{persona.id}}</p> </a>
+
+                
+<button mat-raised-button color="primary" (click)="onDeletePersona(persona.id)">Elimina persona</button>
+
+<button mat-raised-button color="primary" (click)="onPatchPersona(persona.id)">Modifica persona</button>
+            <p>-----------------------------------------------------------------------------------</p>
+            <p>-----------------------------------------------------------------------------------</p>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
+<!-- <ng-template #profiloContatto>
+  <p>Profilo di: {{persona.nome}} - {{persona.cognome}}</p> 
+     <app-contatto [persona]="persona"></app-contatto>
+    
+</ng-template>  -->
+
